@@ -1,0 +1,102 @@
+<html lang="en"><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <title>Kickunity - Your hub for all things football</title> 
+</head>
+<body data-new-gr-c-s-check-loaded="9.42.0" data-gr-ext-installed="">
+    <nav class="navigation">
+        <div class="logo">
+                <img src="./logo_white.png" alt="">
+        </div>
+        <ul>
+            <li onclick="toggleActive(this);" class="navList active"><a href="index.html">Home</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="comments.html">Comments</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="shop.html">Shop</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="Start.html">Quiz</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="sitemap.html">Site Map</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="Studentdetails.html">About us</a></li>
+        </ul>
+    </nav>
+
+    <main class="firstPage">
+            <div class="top">
+                <a href="./offside_blog.html">
+
+                <div class="first">
+                    <img src="./clapping.jpg" alt="football player clapping" style="width: 200px;">
+                    <div class="text">
+                        <h3> The Offside Rule </h3>
+                        <p>This article provides a comprehensive examination of the offside rule in soccer, from its medieval origins to the modern-day interpretation. It covers the rule's significance, challenges, and controversies, offering valuable insights for soccer fans and sports enthusiasts. Get ready to learn everything you need to know about the crucial offside rule!</p>
+                    </div>
+                </div>
+                </a>
+
+                <a href="blogStudent1.html">
+                <div class="first">
+                    <img src="./scoring.jpg" alt="football player scoring" style="width: 200px;">
+                    <div class="text">
+                        <h3>The Football Shop</h3>
+                        <p>Football shops offer a range of essential gear and equipment for players and fans, including jerseys, shorts, cleats, goalkeeper gloves, and shin guards. They also provide customization options and accessories like training cones, agility ladders, and footballs. These shops are a go-to destination for anyone looking to buy football gear.</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="top">
+                <a href="content.html">
+                <div class="first">
+                    <img src="./running.jpg" alt="football player running">
+                    <div class="text">
+                        <h3>History of Football
+                        </h3>
+                        <p>Football, also known as soccer, has a long and fascinating history that spans thousands of years and several continents. Here is a brief overview of the history of football </p>
+                    </div>
+                </div>
+                </a>
+                <a href="blog.html">
+
+                <div class="first">
+                    <img src="./victory.jpg" alt="football player in a victory pose">
+                    <div class="text">
+                        <h3>What is Football?</h3>
+                        <p>Football is the world’s most popular sport and is played by two teams of 11 players. The object of the game is to score by getting the spherical ball into the opposing goal.</p>
+                    </div>
+                </div>
+                </a>
+        </div>
+        <a class="editor" href="./page_editor.html">
+            Editior Info 
+        </a>
+    </main>
+    <script>
+        
+        function removeActive(){
+            let navBar = document.getElementsByClassName("active")
+            for(let list of navBar){
+                list.classList.remove("active")
+            }
+        }
+        function toggleActive(e){
+            removeActive()
+            console.log("hello")
+            e.classList.toggle("active")
+        }
+
+
+        for( let element of document.getElementsByClassName("first")){
+            element.addEventListener("mouseover", ()=>{ 
+            element.children[0].style.width= "0px";
+            })
+
+            element.addEventListener("mouseout", ()=>{ 
+            element.children[0].style.width= "200px";
+            }
+            )
+        }
+
+    </script>
+
+</body></html>

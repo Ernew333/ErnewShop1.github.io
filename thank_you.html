@@ -1,0 +1,90 @@
+<html lang="en"><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Main Page</title>
+    <style>
+
+        main {
+            padding: 80px;
+            position: relative;
+            height: fit-content;
+        }
+
+        main h1 {
+            text-align: center;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            text-shadow: 1.6px 1.6px rgba(0, 0, 0, 0.156);
+
+        }
+        .feedback {
+            width: min(800px, 100%);
+            padding: 0px 40px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .card {
+            background: #4dff001c;
+            height: fit-content;
+            padding: 16px;
+            border-radius: 3.2px;
+            margin-bottom: 16px;
+            /* box-shadow: 0.2em .2em #4dff00; */
+            border: 1px solid rgba(0, 0, 0, 0.131);
+        }
+        .card h4 {
+            padding: 1em;
+            margin-bottom: 11px;
+        }
+    </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="9.42.0" data-gr-ext-installed="">
+    <nav class="navigation">
+        <div class="logo">
+            <img src="./logo_white.png" alt="">
+    </div>
+        <ul>
+            <li onclick="toggleActive(this);" class="navList"><a href="index.html">Home</a></li>
+            <li onclick="toggleActive(this);" class="navList active"><a href="#">Comments</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="#">Shop</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="#">Quiz</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="#">Site Map</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="#">About us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Thank You</h1>
+        <div class="feedback">
+            <div class="card">
+                <h4>This form has been succesfully filled out</h4>
+            </div>
+
+        </div>
+    </main>
+    <a class="editor" href="./page_editor.html">
+        Editior Info 
+    </a>
+    <script>
+        function removeActive() {
+            let navBar = document.getElementsByClassName("active")
+            for (let list of navBar) {
+                list.classList.remove("active")
+            }
+        }
+        function toggleActive(e) {
+            removeActive()
+            e.classList.toggle("active")
+        }
+
+    
+
+    </script>
+
+
+</body></html>

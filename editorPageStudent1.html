@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Editor Page</title>
+    <style>
+        h1{
+            color: #2f4d93;
+            font-family: Quicksand, sans-serif;
+            text-align: center;
+            background-color: aliceblue;
+            clear: both;
+        }
+        h2{
+            color: #2f4d93;
+            font-family: Quicksand, sans-serif;
+            text-align: center;
+            background-color: aliceblue;
+            width: 100%;
+        }
+        body{
+            text-align: center;
+            background-color: #495060;
+        }
+        #editor{
+          float: right;
+           padding: 10px;
+           background-color: #4dff00;
+ }
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="logo">
+            <img src="./cImages/logo_white.png" alt="logo" id="logo">
+        </div>
+        
+        <ul>
+          <li onclick="toggleActive(this);" class="navList "><a href="index.html">Home</a></li>
+          <li onclick="toggleActive(this);" class="navList"><a href="comments.html">Comments</a></li>
+          <li onclick="toggleActive(this);" class="navList active"><a href="shop.html">Shop</a></li>
+          <li onclick="toggleActive(this);" class="navList"><a href="Start.html">Quiz</a></li>
+          <li onclick="toggleActive(this);" class="navList"><a href="sitemap.html">Site Map</a></li>
+          <li onclick="toggleActive(this);" class="navList"><a href="Studentdetails.html">About us</a></li>
+      </ul>
+    </nav><br> <br>
+    <h1> Page Editor</h1>
+    <br>
+    <div>
+    <a> Name: Ernesto Cosentino</a><br>
+    <a> Role: Student 1</a><br>
+    <a>The following pages were edited by me!</a><br>
+    </div> 
+    <a href="#bottom"> ↓jump to bottom</a>
+
+    <h2>Presentation Screen </h2>
+    <p>
+        Created a splash screen using the lesson three autodirect link<br>
+        I used css to center the names, title and logo 
+    </p>
+    <a href="presentationTest.html"> Link to Presentation </a>
+    <h2>Shopping Website</h2>
+    <p>
+        Created a shoping page with products a total button <br>
+        a place to see your orders input fields to input your details <br>
+        a checkbox for express delivery etc... 
+    </p>
+    <a href="shop.html"> Link to Shopping  </a>
+    <h2>Checkout </h2>
+    <p>
+        Created a checkout page for my shopping website that checks<br>
+        mandatory input fileds and brings details and prices from <br>
+        the shopping website 
+    </p>
+    <a href="checkout.html"> Link to checkout </a>
+    <h2> Blog Student 1</h2>
+    <P>
+        i created a blog page a an extra thing<br>
+    </P>
+    <a href="blogStudent1.html"> link to blog</a>
+    <a href="editorPageStudent1.html" id="editor">link to Editor</a>
+    <a id="bottom"></a>
+</body>
+</html>

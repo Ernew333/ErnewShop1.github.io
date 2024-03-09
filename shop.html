@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Football Shop</title>
+  <style>
+   body {
+     background-color: #001433;
+     font-family: Arial, Helvetica, sans-serif;
+   }
+   h1{
+     font-family: Quicksand, sans-serif;
+     color: #4dff00;
+     text-align: center;
+     font-size: 40px;
+     margin: 40px 20px 80px 20px;
+   }
+   .products{
+     float: left;
+     background-color: #a5acaf;
+     margin: 10px 10px 0 0;
+     width: 234px;
+   }
+   .description{
+     text-align: center;
+     font-size: 20px;
+     font-weight: bold;
+     color:#245998;
+     padding-top: 20px;
+     height: 120px;
+     position: relative;
+   }
+   .price{
+     color: #4dff00;
+     position: absolute;
+     bottom: 20px;
+     width: 234px;
+   }
+
+   .container{
+     width: 500px;
+     margin: 10px;
+   }
+   .labelOrder {
+    margin-top: 1.5%;
+     border-style: double;
+     width: 258px;
+     height: 460px;
+     float: left;
+     background-color: #a5acaf;
+     font-size: 20px;
+     font-weight: bold;
+     color: #333;
+}
+
+
+
+#orderDescription {
+  font-size: 15px;
+  height: 40px;
+  border-style: solid;
+}
+form.check{
+  background-color: #ccc;
+  position: absolute;
+  left: 500px;
+  width: 280px;
+  height: 150px;
+  margin-top: -160px;
+  margin-left: 20px;
+
+} 
+
+
+input[type=button] {
+  float: right;
+  margin-top: 3px;
+  margin-right: 4.5px;
+ }
+ input[type=reset]{
+  float: right;
+  margin-top: 20px;
+  margin-right: -75px;
+ }
+ form.quant{
+   text-align: center;
+
+ }
+ .everything{
+  display: flex;
+  flex: row;
+ }
+ #logo{
+  float: left;
+  margin-top: -50px;
+  
+ }
+ #editor{
+  float: right;
+  padding: 10px;
+  background-color: #4dff00;
+ }
+
+
+  </style>
+  </head>
+  <body>
+    <nav class="navigation">
+      <div class="logo">
+          <img src="./cImages/logo_white.png" alt="logo" id="logo">
+      </div>
+      
+      <ul>
+        <li onclick="toggleActive(this);" class="navList "><a href="index.html">Home</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="comments.html">Comments</a></li>
+        <li onclick="toggleActive(this);" class="navList active"><a href="shop.html">Shop</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="hStart.html">Quiz</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="sitemap.html">Site Map</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="Studentdetails.html">About us</a></li>
+    </ul>
+  </nav>
+
+    <h1>SHOP FOOTBALL</h1>
+  <div class="everything">
+    <div class="container">
+    <div class ="products">
+      <div class="description">
+        <a id="FS">Football boots</a>
+        <div class="price">£ 100</div>
+      </div>
+      <img src="./cImages/boots.jpeg" alt="football boots">
+      <form class="quant">
+        <label for="quantity"></label>
+	      <input type="number" id="fBoots"
+		      min="0" max="100" step="1" value="0" onclick="getValue()">
+      </form>
+
+    </div>
+    <div class ="products">
+      <div class="description">
+        <a id="FB">Football Ball</a>
+        <div class="price">£ 50</div>
+      </div>
+      <img src="./cImages/football.jpeg" alt="football ball">
+      <form class="quant">
+        <label for="quantity"></label>
+	      <input type="number" id="fBall"
+		      min="0" max="100" step="1" value="0" onclick="getValue1()">
+      </form>
+
+    </div>
+    <div class ="products">
+      <div class="description">
+        <a id="FJ">Football jersey</a>
+        <div class="price">£ 80</div>
+      </div>
+      <img src="./cImages/jersey.jpeg" alt="football jersey">
+      <form class="quant">
+        <label for="quantity"></label>
+	      <input type="number" id="fJersey"
+		      min="0" max="100" step="1" value="0" onclick="getValue2()">
+      </form>
+    </div>
+    <div class ="products">
+      <div class="description">
+        <a id="FG">Football Gloves</a>
+        <div class="price">£ 40</div>
+      </div>
+      <img src="./cImages/gloves.jpeg" alt="football GLoves">
+      <form class="quant">
+        <label for="quantity"></label>
+	      <input type="number" id="fGloves"
+		      min="0" max="100" step="1" value="0" onclick="getValue3()">
+      </form>
+    </div>
+</div>
+<div class="labelOrder">Your Order:
+  <div id="orderDescription">list:</div>
+  <div class="product" id="order">  </div>
+  <div class="product" id="ballOrder"> </div>
+  <div class="product" id="jOrder"></div>
+  <div class="product" id="gOrder"></div>
+  <div class="product" id="TT"> </div>
+  <input type="button" value="get your total price" id="getTotal" onclick="Total()">
+</div>
+</div>
+
+
+<form class="check">
+  <label for="name">name:</label>
+  <input type="text" name="name" id="name" >
+  <br><label for="tel">contactnumber:</label>
+  <input type="tel" id="tel" name="tel">
+  <label for="express delivery"> express delivery</label>
+  <input type="checkbox" name="express" value="express delivery" value="express delivery" >
+  <input type="button" value="place your order" id="button1" onclick="n()">
+  <input type = "reset" name="button2" value="Reset" id="reset" onclick=" document.getElementById('fJersey').value = 0,getValue2(), document.getElementById('fBoots').value = 0,getValue(), document.getElementById('fBall').value = 0,getValue1(), document.getElementById('fGloves').value = 0,getValue3()">
+ 
+
+</form>
+<a href="editorPageStudent1.html" id="editor">link to Editor</a>
+
+<script>
+  
+  
+  
+  
+  function removeActive(){
+            let navBar = document.getElementsByClassName("active")
+            for(let list of navBar){
+                list.classList.remove("active")
+            }
+        }
+        function toggleActive(e){
+            removeActive()
+            e.classList.toggle("active")
+        }
+
+  var TotalBallBought = 0;
+  var TotalShoesBought = 0;
+  var totalJerseyBought = 0;
+  var totalGlovesBought = 0;
+  var totalSale =0;
+  document.getElementById("button1").disabled = true;
+  function getValue(){
+  var TotalShoes = parseInt(document.getElementById("fBoots").value);
+  if(TotalShoes != 0){
+    document.getElementById("button1").disabled = false;
+  }else{
+    document.getElementById("button1").disabled = true;
+  }
+   TotalShoesBought = TotalShoes * 100;
+  document.getElementById("order").innerHTML =  "football shoes price:" + TotalShoesBought; 
+  
+  }
+  function getValue1(){
+    var TotalBall =parseInt(document.getElementById("fBall").value);
+    if(TotalBall != 0){
+    document.getElementById("button1").disabled = false;
+  }else{
+    document.getElementById("button1").disabled = true;
+  }
+     TotalBallBought = TotalBall * 50; 
+    document.getElementById("ballOrder").innerHTML = " Ball price:" + TotalBallBought;
+    
+  }
+
+  function getValue2(){
+    var totalJersey = parseInt(document.getElementById("fJersey").value);
+    if(totalJersey != 0){
+    document.getElementById("button1").disabled = false;
+  }else{
+    document.getElementById("button1").disabled = true;
+  }
+     totalJerseyBought = totalJersey * 80;
+    document.getElementById("jOrder").innerHTML = " Jersey price:" + totalJerseyBought;
+    
+  }
+
+  function getValue3(){
+    var totalGloves = parseInt(document.getElementById("fGloves").value);
+    if(totalGloves != 0){
+    document.getElementById("button1").disabled = false;
+  }else{
+    document.getElementById("button1").disabled = true;
+  }
+     totalGlovesBought = totalGloves * 40;
+    document.getElementById("gOrder").innerHTML = " Gloves price:" + totalGlovesBought;
+  
+  }
+  function Total(){
+     totalSale = TotalBallBought + TotalShoesBought + totalJerseyBought + totalGlovesBought;
+    console.log(totalSale);
+    document.getElementById("TT").innerHTML = "total price: " + totalSale;
+
+  } 
+  function n(){
+    var NN = document.getElementById('name').value;
+    var TT = document.getElementById('tel').value;
+    location.href = `checkout.html?${NN}-${TT}-${totalSale}`
+  }
+  
+  
+  
+  
+
+</script>
+
+
+  </body>
+</html>

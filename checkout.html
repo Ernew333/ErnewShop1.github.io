@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<head>
+    <title>checkoutpage</title>
+    <style>
+        body{
+            background-color: rgb(193, 29, 29);
+        }
+        h2{
+            color: #2f4d93;
+            font-family: Quicksand, sans-serif;
+        }
+        .orderSummary{
+            background-color: aliceblue;
+        }
+        .payment{
+            background-color: aliceblue;
+        }
+        .Baddress{
+            background-color: aliceblue;
+        }
+        .Contact{
+            background-color: aliceblue;
+        }
+        .comfrimation{
+            
+            margin-left: 700px;
+            
+        }
+       .star{
+        color: red;
+       }
+       #editor{
+        float: right;
+        padding: 10px;
+        background-color: #4dff00;
+ }
+    </style>
+</head>
+
+<body>
+<div class="orderSummary">
+    <h2>Order summary</h2>
+    <a>Reference: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;90002340023042340</a><br><br>
+    <a>Desription:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;make Payment</a><br><br>
+    <a id="amount"> Amount:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</div>
+<div class="payment">
+    <form>
+    <h2>payment Details</h2>
+    <label for="password"> Card number <a class="star">*</a></label>
+    <input type="password" name="cardNum" id="password" size="16" placeholder="1234456778902010" required>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="name"> Cardholder's name <a class="star">*</a>
+    <input type="text" name="name" id="name" placeholder="Alex Heat" required >
+    </label><br><br>
+    <label for="expM">Expiry Date <a class="star">*</a> </label>
+    <select name="ExpM" id="expM" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+     
+    <a>/</a>
+    <select name="ExpD" id="expD" required>
+        <option value="jan">Jan</option>
+        <option value="feb">Feb</option>
+        <option value="mar">Mar</option>
+        <option value="apr">Apr</option>
+        <option value="may">May</option>
+        <option value="jun">Jun</option>
+        <option value="jul">Jul</option>
+        <option value="aug">Aug</option>
+        <option value="sep">Sep</option>
+        <option value="oct">Oct</option>
+        <option value="nov">Nov</option>
+        <option value="dec">Dec</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label for="security">  Security code: <a class="star">*</a></label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="seCode" id="security" size="3" placeholder="123" required>
+    </form><br>
+</div>
+<div class="Baddress">
+    <h2>Billing address</h2>
+    <form>
+    <label for="address1">Address1:<a class="star">*</a> </label>
+    &nbsp;<input type="text" name="Address1" id="address1" size="35" value="115 New Cavendish Street" required><br><br>
+    <label for="address2">Address2: </label>
+    &nbsp;<input type="text" name="Address2" id="address2" size="35"><br><br>
+    <label for="Town">TownCity: </label>
+    <input type="text" name="TownCity" id="Town" size="35"><br><br>
+    <label for="PostCode">Postcode:<a class="star">*</a> </label>
+    &nbsp;<input type="text" name="Postcode" id="PostCode" size="35" value="W1W 6JW" required>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="Country">Country: </label>
+    <select name="Country" id="Country">
+        <option value="UK" selected>United Kingdom</option>
+        <option value=" US">United States</option>
+        <option value=" France">France</option>
+        <option value=" Italy">Italy</option>
+        <option value=" Germany">Germany</option>
+    </select>
+    </form><br>
+    
+</div>
+<div class="Contact">
+    <h2>Contact details</h2>
+    <form>
+    <label for="phoneNumber">Phone Number: </label>
+    <input type="text" name="phoneNumber" id="phoneNumber" size="35"><br><br>
+    <label for="Email">Email: </label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Email" id="Email" size="35"><br><br>
+    </form>
+</div>
+<div class="comfrimation">
+    <input type="submit" name="Confrim " value="Confrim Order" onclick="Checkpassword()">
+</div>
+<a href="editorPageStudent1.html" id="editor">link to Editor</a>
+<script>
+    var OO = location.href.split("?")[1].split("-")
+    
+
+    document.getElementById("name").value = OO[0].replace("%20"," ")
+    document.getElementById("phoneNumber").value = OO[1]
+    document.getElementById("amount").innerHTML = "amount " + OO[2]
+
+    function Checkpassword(){
+       var creditCard = document.getElementById("password").value;
+       console.log(creditCard)
+       if(creditCard.toString().length == 16){
+        
+       }else{
+        alert('missing mandatory field or incorrect input please check and try again');
+       }
+    }
+    function checkSec(){
+        var secCode = document.getElementById("security").value;
+        if(secCode.toString().length == 3){
+
+        }else{
+            alert('missing mandatory field or incorrect input please check and try again');
+        }
+    }
+</script>
+</body>
+</html>
